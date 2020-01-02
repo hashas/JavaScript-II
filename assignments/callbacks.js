@@ -1,4 +1,6 @@
-// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a higher order function and invoke the callback function to test your work.
+// You have been provided an example of a problem and a solution to see how this works with our items array. 
+// Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -41,25 +43,47 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-  return cb(arr.length(arr));
+  return cb(arr.length);
 }
+
+const test1 = getLength(items, item => `There are ${item} items in the list!`);
+console.log(test1);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
+
+const test2 = last(items, item => `I love my ${item}!`);
+console.log(test2);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  sum = x + y;
+  return cb(sum);
 }
+
+const test3 = sumNums(3, 9, data => `The sum of these two numbers is ${data}!`);
+console.log(test3);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  product = x * y;
+  return cb(product);
 }
+
+const test4 = multiplyNums(3, 9, data => `The product of these two numbers is ${data}!`);
+console.log(test4);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+    check = list.includes(item);
+    return cb(check);
 }
+
+const test5 = contains('Gum', items, data => `It is "${data}" that this item is present in the given list!`);
+console.log(test5);
 
 /* STRETCH PROBLEM */
 
