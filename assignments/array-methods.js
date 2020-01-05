@@ -63,10 +63,12 @@ runners.forEach((item) => {
 });
 console.log(fullNames);
 
-// // ==== Challenge 2: Use .map() ====
-// // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
-// let firstNamesAllCaps = [];
-// console.log(firstNamesAllCaps);
+// ==== Challenge 2: Use .map() ====
+// The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
+let firstNamesAllCaps = runners.map((item) => {
+  return item.first_name.toUpperCase();
+});
+console.log(firstNamesAllCaps);
 
 // // ==== Challenge 3: Use .filter() ====
 // // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
